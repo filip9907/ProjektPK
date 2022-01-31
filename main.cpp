@@ -19,4 +19,7 @@ int main() {
     test1->iloscWszystkiego();
     test1->iloscJedynek();
     test1->iloscZer();
+
+
+    std::cout << "zera: " << test1->chances().first << ", jedynki: " << test1->chances().second;
 };

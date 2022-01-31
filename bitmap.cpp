@@ -57,3 +57,37 @@ int bitmap::iloscpol(int type) {
 
     return ilosc;
 }
+
+std::pair<int, int> bitmap::xCords() {
+
+    for (int x = 0; x < _map.size(); x++) {
+        for (int y = 0; y < _map[x].size(); y++) {
+            if (_map[x][y] == 4) {
+                return std::make_pair(x, y);
+            }
+        }
+    }
+    return std::pair<int, int>(0, 0);
+}
+
+std::pair<int, int> bitmap::chances() {
+    auto xCords = this->xCords();
+    int zera = 0;
+    int jedynki = 0;
+    std::cout << xCords.first;
+
+    for (int x = xCords.first - 1; x < x + 2; x++) {
+        for (int y = xCords.second - 1; y < y + 2; y++) {
+            if (x != xCords.first && y != xCords.second) {
+                if (y == 0) {
+                    zera++;
+                } else if (y == 1) {
+                    jedynki++;
+                }
+            }
+
+        }
+    }
+
+    return std::make_pair(zera, jedynki);
+}
