@@ -74,18 +74,14 @@ std::pair<int, int> bitmap::chances() {
     auto xCords = this->xCords();
     int zera = 0;
     int jedynki = 0;
-    std::cout << xCords.first;
 
-    for (int x = xCords.first - 1; x < x + 2; x++) {
-        for (int y = xCords.second - 1; y < y + 2; y++) {
-            if (x != xCords.first && y != xCords.second) {
-                if (y == 0) {
-                    zera++;
-                } else if (y == 1) {
-                    jedynki++;
-                }
+    for (int x = xCords.first - 1; x < xCords.first + 2; x++) {
+        for (int y = xCords.second - 1; y < xCords.second + 2; y++) {
+            if (_map[x][y] == 0) {
+                zera++;
+            } else if (_map[x][y] == 1) {
+                jedynki++;
             }
-
         }
     }
 
