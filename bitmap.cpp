@@ -15,7 +15,7 @@ void bitmap::display(){
     else {
         int numberWidth = _map[1].size() / 10 + 1;
 
-        std::cout << std::setw(numberWidth) << "   ";
+        std::cout << std::setw(numberWidth + 2) << " ";
         for (int column = 0; column < _map[1].size(); column++) {
             std::cout << std::setw(numberWidth);
             std::cout << column + 1 << ". ";

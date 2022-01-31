@@ -10,8 +10,7 @@
 class bitmap {
     friend class bitmapReader;
 
-public: // remove later
-    //private:
+private:
     std::vector<std::vector<int> > _map;
 
 public:
