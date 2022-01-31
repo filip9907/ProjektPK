@@ -4,16 +4,20 @@
 
 #include <fstream>
 #include <string>
+#include <memory>
+#include <sstream>
 
 
 #include "bitmap.hpp"
 
 
-class bitmapReader
-{
+class bitmapReader {
 private:
 public:
-	bitmapReader(bitmap *_bitmap, std::string);
-	~bitmapReader();
+    bitmapReader();
+
+    ~bitmapReader();
+
+    int readFile(bitmap &bitmap, std::string filePath);
 };
 #endif

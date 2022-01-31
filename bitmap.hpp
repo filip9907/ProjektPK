@@ -7,16 +7,18 @@
 #include <vector>
 
 	
-class bitmap  
-{
-	public: // remove later
-	//private:
-	std::vector<std::vector <int> >  _map;
+class bitmap {
+    friend class bitmapReader;
 
-	public:
-	bitmap();
-	~bitmap();
+public: // remove later
+    //private:
+    std::vector<std::vector<int> > _map;
 
-	void display();
+public:
+    bitmap();
+
+    ~bitmap();
+
+    void display();
 };
 #endif
