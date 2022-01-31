@@ -39,3 +39,21 @@ void bitmap::display(){
         }
     }
 }
+
+int bitmap::iloscpol() {
+    return _map.size() * _map[0].size() - 1;
+}
+
+int bitmap::iloscpol(int type) {
+    int ilosc = 0;
+
+    for (auto x: _map) {
+        for (auto y: x) {
+            if (y == type) {
+                ilosc++;
+            }
+        }
+    }
+
+    return ilosc;
+}
