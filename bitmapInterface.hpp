@@ -1,5 +1,12 @@
 #include "bitmap.hpp"
 
-class bitmapInterface : public bitmap {
+#include <iostream>
 
+class bitmapInterface : public bitmap {
+public:
+    void iloscJedynek();
+
+    void iloscZer();
+
+    void iloscWszystkiego();
 };
