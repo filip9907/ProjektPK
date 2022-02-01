@@ -13,13 +13,14 @@ class bitmap {
 private:
     std::vector<std::vector<int> > _map;
 
+    std::pair<int, int> xCords();
 
 protected:
     int iloscpol();
 
     int iloscpol(int type);
 
-    std::pair<int, int> xCords();
+    std::pair<int, int> chances();
 
 public:
     bitmap();
@@ -27,9 +28,5 @@ public:
     ~bitmap();
 
     void display();
-
-    std::pair<int, int> chances();
-
-
 };
 #endif

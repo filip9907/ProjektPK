@@ -11,3 +11,11 @@ void bitmapInterface::iloscZer() {
 void bitmapInterface::iloscWszystkiego() {
     std::cout << "Ilość wszystkich pol (bez x) na całej planszy: " << this->iloscpol() << std::endl;
 }
+
+void bitmapInterface::proprocje() {
+    auto pair = chances();
+
+    std::cout << "Szanse na ZERO: " << pair.first << "/8" << std::endl;
+    std::cout << "Szanse na JEDYNKE: " << pair.second << "/8" << std::endl;
+
+}

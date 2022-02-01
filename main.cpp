@@ -20,6 +20,5 @@ int main() {
     test1->iloscJedynek();
     test1->iloscZer();
 
-
-    std::cout << "zera: " << test1->chances().first << ", jedynki: " << test1->chances().second;
+    test1->proprocje();
 };

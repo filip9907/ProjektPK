@@ -9,4 +9,6 @@ public:
     void iloscZer();
 
     void iloscWszystkiego();
+
+    void proprocje();
 };
