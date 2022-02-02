@@ -1,17 +1,9 @@
+#include "readerTranspon.hpp"
 
-#include "bitmapReader.hpp"
-
-bitmapReader::bitmapReader() {
-
-}
-
-bitmapReader::~bitmapReader() {
-
-}
-
-int bitmapReader::checkFile(std::string filePath) {
-    std::vector<std::vector<int> > checkVec;
-
+int readerTranspon::readFile(bitmap &bitmap, std::string filePath) {
+    if(checkFile(filePath)!=0){
+        return 1;
+    }
     std::ifstream file(filePath);
     std::string line;
     std::string lineCheck;
@@ -41,21 +33,15 @@ int bitmapReader::checkFile(std::string filePath) {
                     file.close();
                     return 1;
                 }
+
             }
-            checkVec.push_back(tmp);
+            bitmap._map.push_back(tmp);
         }
     } else {
         std::cerr << "Błąd plik nie otwarty!" << std::endl;
         file.close();
         return 1;
     }
-    for(auto a: checkVec){
-        if(a.size() != checkVec[0].size()){
-            std::cerr << "Nierówna ilość kolumn" << std::endl;
-            return 1;
-        }
-    }
-
     file.close();
     return 0;
 }

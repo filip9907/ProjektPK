@@ -9,6 +9,7 @@
 	
 class bitmap {
     friend class readerNormal;
+    friend class readerTranspon;
 
 private:
     std::vector<std::vector<int> > _map;
