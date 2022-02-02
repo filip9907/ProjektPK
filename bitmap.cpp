@@ -11,10 +11,11 @@ bitmap::~bitmap()
 }
  
 void bitmap::display(){
-    if (_map.empty()) std::cout << "BITMAPA Pusta!" << std::endl;
+    if (_map.empty()) std::cout << "BITMAPA Pusta!" << std::endl;//jesli bitmapa pusta to program nie zadziała
     else {
         int numberWidth = _map[1].size() / 10 + 1;
 
+        //wpisywanie do bitmapy
         std::cout << std::setw(numberWidth + 2) << " ";
         for (int column = 0; column < _map[1].size(); column++) {
             std::cout << std::setw(numberWidth);
@@ -22,14 +23,14 @@ void bitmap::display(){
         }
 
         std::cout << std::endl;
-
+//wypisywanie bitmapy
         for (int row = 0; row < _map.size(); row++) {
             std::cout << std::setw(numberWidth);
             std::cout << row + 1 << ". ";
             for (int column = 0; column < _map[row].size(); column++) {
                 std::cout << std::setw(numberWidth);
                 if (_map[row][column] == 4) {
-                    std::cout << "\033[1;31m X\033[0m" << "  ";
+                    std::cout << "\033[1;31mX\033[0m" << "  ";
                 } else {
                     std::cout << _map[row][column] << "  ";
                 }
@@ -39,7 +40,7 @@ void bitmap::display(){
         }
     }
 }
-
+//liczy ilość wszystkich pól
 int bitmap::iloscpol() {
     return _map.size() * _map[0].size() - 1;
 }

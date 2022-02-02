@@ -13,6 +13,7 @@ int readerTranspon::readFile(bitmap &bitmap, std::string filePath) {
     int i = 0;
     std::vector<int> tmp;
     int number;
+    std::vector< std::vector<int> > vector;
 
     if (file.good()) {
         while (getline(file, line)) {
@@ -35,8 +36,20 @@ int readerTranspon::readFile(bitmap &bitmap, std::string filePath) {
                 }
 
             }
-            bitmap._map.push_back(tmp);
-        }
+            vector.push_back(tmp);
+
+
+                }
+            std::vector< std::vector<int> > outtrans;   //the 'transposed' vector
+            for(int j = 0; j<vector[0].size();j++) {
+                std::vector<int> tranTmp;
+                for (int i = 0; i < vector.size(); i++) {
+                    tranTmp.push_back(vector[i][j]);
+                }
+                outtrans.push_back(tranTmp);
+            }
+            bitmap._map=outtrans;
+
     } else {
         std::cerr << "Błąd plik nie otwarty!" << std::endl;
         file.close();

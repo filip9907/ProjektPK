@@ -2,12 +2,13 @@
 
 #include "bitmapInterface.hpp"
 #include "readerNormal.h"
+#include "readerTranspon.hpp"
 
 int main(int argc, char* argv[]) {
 
     auto test1 = std::make_unique<bitmapInterface>();
 
-    readerNormal reader;
+    readerTranspon reader;
 
     std::string filePath = argv[1];
 

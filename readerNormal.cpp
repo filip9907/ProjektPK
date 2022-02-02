@@ -2,6 +2,7 @@
 
 
 int readerNormal::readFile(bitmap &bitmap, std::string filePath) {
+
     if(checkFile(filePath)!=0){
         return 1;
     }
