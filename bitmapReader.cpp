@@ -3,7 +3,34 @@
 
 bitmapReader::bitmapReader() {
     std::cout << "Test Konstruktora" << std::endl;
+}
 
+int bitmapReader::checkFile(std::string filePath) {
+    std::ifstream file(filePath);
+
+    if (file.good()) {
+
+        std::string line;
+        std::string firstLine;
+
+        getline(file, firstLine);
+
+        while (getline(file, line)) {
+            if (line.size() != firstLine.size()) {
+                std::cerr << "Nierowna ilosc znakow w wierszach!";
+                return 2;
+            } else {
+
+                return 0;
+
+            }
+        }
+    }
+    else {
+        std::cerr << "Bledna otwarcie pliku";
+        return 3;
+    }
+    return 4;
 }
 
 int bitmapReader::readFile(bitmap &bitmap, std::string filePath) {
