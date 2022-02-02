@@ -1,25 +1,23 @@
-#include <iostream>
 #include <memory>
 
-#include "bitmap.hpp"
-#include "bitmapReader.hpp"
 #include "bitmapInterface.hpp"
-
+#include "readerNormal.h"
 
 int main(int argc, char* argv[]) {
 
     auto test1 = std::make_unique<bitmapInterface>();
 
-    bitmapReader reader;
+    readerNormal reader;
 
-    reader.checkFile("file.txt");
-//    reader.readFile(*test1, "file.txt");
-//
-//    test1->display();
-//
-//    test1->iloscWszystkiego();
-//    test1->iloscJedynek();
-//    test1->iloscZer();
-//
-//    test1->proprocje();
+    std::string filePath = argv[1];
+
+    reader.readFile(*test1, filePath);
+
+    test1->display();
+
+    test1->iloscWszystkiego();
+    test1->iloscJedynek();
+    test1->iloscZer();
+
+    test1->proprocje();
 };

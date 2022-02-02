@@ -34,7 +34,7 @@ void bitmap::display(){
                     std::cout << _map[row][column] << "  ";
                 }
             }
-            std::cout << std::endl;
+            std::cout << std::endl << std::endl;
 
         }
     }
@@ -84,6 +84,5 @@ std::pair<int, int> bitmap::chances() {
             }
         }
     }
-
     return std::make_pair(zera, jedynki);
 }

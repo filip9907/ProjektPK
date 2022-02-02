@@ -8,7 +8,7 @@
 
 	
 class bitmap {
-    friend class bitmapReader;
+    friend class readerNormal;
 
 private:
     std::vector<std::vector<int> > _map;

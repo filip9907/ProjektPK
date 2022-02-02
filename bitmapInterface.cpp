@@ -17,5 +17,5 @@ void bitmapInterface::proprocje() {
 
     std::cout << "Szanse na ZERO: " << pair.first << "/8" << std::endl;
     std::cout << "Szanse na JEDYNKE: " << pair.second << "/8" << std::endl;
-
+    std::cout << std::endl;
 }

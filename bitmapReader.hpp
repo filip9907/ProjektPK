@@ -18,7 +18,7 @@ public:
 
     ~bitmapReader();
 
-    int checkFile(std::string filePath);
-    int readFile(bitmap &bitmap, std::string filePath);
+    virtual int checkFile(std::string filePath) = 0;
+    virtual int readFile(bitmap &bitmap, std::string filePath) = 0;
 };
 #endif
