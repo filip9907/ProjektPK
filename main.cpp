@@ -4,21 +4,30 @@
 #include "readerNormal.h"
 #include "readerTranspon.hpp"
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
+    auto bitmap = std::make_unique<bitmapInterface>();
+    readerTranspon readerTranspon;
+    readerNormal readerNormal;
 
-    auto test1 = std::make_unique<bitmapInterface>();
 
-    readerTranspon reader;
+    if (argc < 1) {
+        std::cerr << "Brak argumentu!";
+        return 1;
+    } else {
 
-    std::string filePath = argv[1];
 
-    reader.readFile(*test1, filePath);
+        std::string filePath = argv[1];
+        if (argc == 2) {
+            readerTranspon.readFile(*bitmap, filePath);
+        } else {
+            readerNormal.readFile(*bitmap, filePath);
+        }
 
-    test1->display();
+        bitmap->display();
 
-    test1->iloscWszystkiego();
-    test1->iloscJedynek();
-    test1->iloscZer();
-
-    test1->proprocje();
+        bitmap->iloscWszystkiego();
+        bitmap->iloscJedynek();
+        bitmap->iloscZer();
+        bitmap->proprocje();
+    }
 };
