@@ -15,9 +15,9 @@ int main(int argc, char *argv[]) {
         return 1;
     } else {
 
-
+//jeśli wpiszemy dowolny argument to wyswietli sie transponowana jesli nie to normalnie
         std::string filePath = argv[1];
-        if (argc == 2) {
+        if (argc == 3) {
             readerTranspon.readFile(*bitmap, filePath);
         } else {
             readerNormal.readFile(*bitmap, filePath);
@@ -30,4 +30,5 @@ int main(int argc, char *argv[]) {
         bitmap->iloscZer();
         bitmap->proprocje();
     }
+    return 0;
 };

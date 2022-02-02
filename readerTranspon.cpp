@@ -1,7 +1,7 @@
 #include "readerTranspon.hpp"
 
 int readerTranspon::readFile(bitmap &bitmap, std::string filePath) {
-    if(checkFile(filePath)!=0){
+    if(checkFile(filePath)!=0){//jeśli jest coś nie tak z plikiem to konczy program
         return 1;
     }
     std::ifstream file(filePath);
@@ -24,15 +24,15 @@ int readerTranspon::readFile(bitmap &bitmap, std::string filePath) {
 
             while (stream >> buffor) {
                 if (buffor == "1") {
-                    tmp.push_back(1);
+                    tmp.push_back(1);//jeśli napotka na 1 to wpisuje 1
                 } else if (buffor == "0") {
-                    tmp.push_back(0);
+                    tmp.push_back(0);//jeśli napotka na 0 to wpisuje 0
                 } else if (buffor == "x") {
-                    tmp.push_back(4);
+                    tmp.push_back(4);//jesli napotka x to wpisuje 4 (żeby zachować vector intów)
                 } else {
                     std::cerr << "Błędne dane w pliku!" << std::endl;
                     file.close();
-                    return 1;
+                    return 1;//jeśli napotka inny znak to kończy program
                 }
 
             }

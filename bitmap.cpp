@@ -35,7 +35,7 @@ void bitmap::display(){
                     std::cout << _map[row][column] << "  ";
                 }
             }
-            std::cout << std::endl << std::endl;
+            std::cout << std::endl;
 
         }
     }
