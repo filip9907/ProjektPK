@@ -15,7 +15,7 @@ void bitmap::display(){
     else {
         int numberWidth = _map[1].size() / 10 + 1;
 
-        //wpisywanie do bitmapy
+        //wypisywanie kolumn
         std::cout << std::setw(numberWidth + 2) << " ";
         for (int column = 0; column < _map[1].size(); column++) {
             std::cout << std::setw(numberWidth);
@@ -23,10 +23,11 @@ void bitmap::display(){
         }
 
         std::cout << std::endl;
-//wypisywanie bitmapy
+//wypisywanie wierszy
         for (int row = 0; row < _map.size(); row++) {
             std::cout << std::setw(numberWidth);
             std::cout << row + 1 << ". ";
+            //wypisywanie zawartosci
             for (int column = 0; column < _map[row].size(); column++) {
                 std::cout << std::setw(numberWidth);
                 if (_map[row][column] == 4) {

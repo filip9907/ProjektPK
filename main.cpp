@@ -1,7 +1,7 @@
 #include <memory>
 
 #include "bitmapInterface.hpp"
-#include "readerNormal.h"
+#include "readerNormal.hpp"
 #include "readerTranspon.hpp"
 
 int main(int argc, char *argv[]) {

@@ -10,7 +10,7 @@ bitmapReader::~bitmapReader() {
 }
 
 int bitmapReader::checkFile(std::string filePath) {
-    std::vector<std::vector<int> > checkVec;
+    std::vector<std::vector<int> > checkVec;//tworzenie tymczasowego vectora vectorów
 
     std::ifstream file(filePath);
     std::string line;
@@ -49,7 +49,7 @@ int bitmapReader::checkFile(std::string filePath) {
         file.close();
         return 1;
     }
-    for(auto a: checkVec){
+    for(auto a: checkVec){//sprawdzanie poprawnosci pliku
         if(a.size() != checkVec[0].size()){
             std::cerr << "Nierówna ilość kolumn" << std::endl;
             return 1;

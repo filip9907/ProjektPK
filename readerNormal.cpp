@@ -1,4 +1,4 @@
-#include "readerNormal.h"
+#include "readerNormal.hpp"
 
 
 int readerNormal::readFile(bitmap &bitmap, std::string filePath) {
